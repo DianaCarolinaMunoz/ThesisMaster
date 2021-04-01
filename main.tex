@@ -1,0 +1,577 @@
+
+\documentclass[12pt]{article}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{authblk}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\usepackage[breaklinks=true]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=red,      
+    urlcolor=blue,
+    citecolor=cyan,
+}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{placeins} 
+\usepackage{listings}
+\usepackage{vmargin}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{cite} % para contraer referencias
+
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{placeins}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{ulem}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\addtolength{\textwidth}{2cm}
+\addtolength{\hoffset}{-1cm}
+\setlength\parindent{0pt}
+\setlength{\parskip}{0.5cm}
+
+\begin{document}
+
+%=====================================================================================
+
+\pagenumbering{gobble}
+
+%\input{./Cartaanteproyecto.tex}
+%\clearpage\null\newpage
+
+%\input{./cartatutor.tex}
+%\clearpage\null\newpage
+
+%\input{./cartatesis.tex}
+%\clearpage\null\newpage
+
+\input{./title.tex}
+%\clearpage\null\newpage
+
+%=====================================================================================
+
+%\section*{Agradecimientos}
+
+%Quisiéramos aprovechar esta oportunidad para agradecer a nuestro director, Alejandro Paz por guiarnos y apoyarnos en el proceso de investigación y ejecución del trabajo de grado. Además, nos gustaría agradecer el apoyo recibido por parte de la oficina de recursos físicos de la Pontificia Universidad Javeriana Cali; sin su apoyo, experiencia y colaboración este trabajo no habría sido posible.
+
+%Finalmente, agradecer a nuestras familias y seres queridos por forjarnos como las personas que somos hoy en día, muchos de nuestros logros y esfuerzos son gracias a su acompañamiento y apoyo incondicional. Por motivarnos a cumplir con cada uno de nuestros propósitos. A Dios por llenarnos de fortaleza y sabiduría durante todo este proceso de aprendizaje y experiencias que nos hicieron crecer en los diferentes aspectos de nuestras vidas.
+
+
+
+\clearpage\null\newpage
+
+
+%=====================================================================================
+%\section*{Resumen}
+
+
+%\pagenumbering{gobble}
+%\newpage
+
+%=====================================================================================
+%\section*{Abstract}
+
+
+
+%\pagenumbering{gobble}
+%\newpage
+
+%=====================================================================================
+
+\section*{Glosario}
+\begin{itemize}
+\item \textbf{Frecuencia Respiratoria:} Número de respiraciones que realiza un ser vivo en un periodo específico \cite{1}. 
+\item \textbf{Volumen Respiratorio:} Cantidad de aire inhalado, exhalado y almacenado dentro de los pulmones en un momento dado \cite{2}.
+\item \textbf{Saturación de Oxigeno:} La saturación de oxígeno, es la cantidad de oxígeno en porcentaje unido a la hemoglobina en los glóbulos rojos \cite{3}.
+\item \textbf{Diagnostico médico:} Diagnóstico basado en información de fuentes tales como hallazgos de un examen físico, entrevista con el paciente o su familia o ambos, historial médico del paciente y su familia, y hallazgos clínicos según lo informado por pruebas de laboratorio y estudios radiológicos \cite{4}.
+\item \textbf{Evaluación médica:} El propósito de la evaluación es determinar si se han cumplido los criterios de resultado y cómo se podría mejorar la atención al paciente \cite{4}.
+\item \textbf{Terapeuta respiratorio:} Un profesional de rehabilitación que promueve una salud óptima mediante la aplicación de principios científicos para prevenir, identificar, evaluar, corregir o aliviar pacientes que sufren de problemas y afecciones cardio-pulmonares o respiratorios agudos o crónicos \cite{4}.
+
+
+\end{itemize}
+\newpage
+
+%=====================================================================================
+\tableofcontents
+\addtocontents{toc}{\hfill \textbf{Página} \par}
+
+%\addtocontents{toc}{\hspace{-7.5mm} \textbf{Capítulos}}
+%\addtocontents{toc}{\hfill \textbf{Página} \par}
+%\addtocontents{toc}{\vspace{-2mm} \hspace{-7.5mm} \hrule \par}
+
+
+
+
+
+
+
+\newpage
+
+\listoffigures
+
+\newpage
+
+%\listoftables
+
+%\newpage
+
+%=====================================================================================
+%\section*{Prólogo}
+\pagenumbering{arabic}
+
+\pagenumbering{gobble}
+\newpage
+
+
+%=====================================================================================
+%\section{Introducción}
+
+%La pandemia del covid 19 ha traido a la humanidad nuevas necesidades de adaptación para 
+
+
+%\frontmatter{In}
+
+%\pagenumbering{arabic}
+
+
+
+
+
+%\newpage
+
+%=====================================================================================
+\section{Objetivos, alcance y contribuciones}
+
+%-------------------------------------------------------------------------------------
+\subsection*{Objetivo General}
+
+Desarrollar un prototipo de software integrado a un dispositivo electr\'onico inspir\'ometro remoto que permita programar actividades de terapia respiratoria requeridas por el profesional de la salud y a su vez, permita registrar los datos de los pacientes mientras realizan las actividades establecidas.
+
+%-------------------------------------------------------------------------------------
+\subsection{Objetivos Específicos}
+\label{objetivoses}
+
+
+\begin{itemize}
+\item Explorar la literatura sobre las pr\'acticas de software relacionadas con un inspir\'omentro y la informaci\'on que se transmite desde el dispositivo, reconocer las etapas de funcionamiento del sistema a desarrollar para llevar a cabo una terapia respiratoria de  re-expansi\'on pulmonar.
+
+\item Definir los requerimientos del sistema mediante la teor\'ia de soluci\'on de problemas inventivos metodolog\'ia TRIZ y la tecnolog\'ia de gamificaci\'on, as\'i como las t\'ecnicas de trabajo e integraci\'on de datos para el sistema software.
+
+\item Dise\~{n}ar e implementar un sistema software que se integre con un inspir\'ometro electr\'onico que permita adaptarse al proceso de respiraci\'on de un paciente y que incorpore terapias de re-expansi\'on pulmonar para la recuperaci\'on y mantenimiento de vol\'umenes y capacidades pulmonares.
+
+%\item Validar el funcionamiento del software utilizando datos simulados de un paciente con COVID-19 utilizando el inspir\'ometro electr\'onico  %cambiar
+
+\item Validar el funcionamiento del sistema dise\~{n}ado con personas adultas sin alteraci\'on de la funci\'on pulmonar.  %acotar que personas %personas adultas mayores de 5 personas sin alteracion de la funcion pulmonar...quitar previos....
+
+\end{itemize}
+
+%-------------------------------------------------------------------------------------
+\subsection{Alcances}
+
+Prototipo software que se encargar\'a de impartir las instrucciones al paciente para la realizaci\'on de su terapia respiratoria, a partir de los datos que genera el paciente en la utilizaci\'on del inspir\'ometro electr\'onico, este dispositivo permitir\'a registrar datos durante una terapia utilizando tecnolog\'ias de gamificaci\'on para brindar soluciones de acompa\~{n}amiento remoto. 
+%-------------------------------------------------------------------------------------
+\subsection{Contribuciones}
+
+
+
+
+\newpage
+
+%-------------------------------------------------------------------------------------
+%\subsection{Antecedentes}
+
+
+
+%=====================================================================================
+
+
+%=====================================================================================
+\section{Justificación}
+
+Tras el desencadenamiento del COVID-19 como pandemia y el distanciamiento social obligatorio, se redujo significativamente el acceso a los servicios de rehabilitaci\'on. Por tal raz\'on, el sector de salud en Colombia ha buscado asignar y validar tratamientos efectivos de manera remota con la telemedicina, para la cual hace uso de las tecnolog\'ias al programar citas virtuales, atenciones mediante videollamadas, chatbots entre otras soluciones que han complementado el servicio que brinda un terapeuta, adem\'as de brindar informaci\'on indicada para personal que lo requiera, con ello, se  ha evidenciado tambi\'en que las tecnolog\'ias de la informaci\'on permiten ampliar cobertura de los servicios de salud y disminuir tanto la desigualdad en el acceso a esos servicios como en los costos \cite{7}.
+
+%REVISAR
+Por lo anterior, es necesario contar con un producto de apoyo que permita trazar un avance a los servicios que se est\'an brindando en telemedicina y a que su vez pueda cubrir las nuevas necesidades de acceso remoto que han surgido con la utilizaci\'on de tecnolog\'ias de la informaci\'on en el sector de salud. Con la ejecuci\'on de este proyecto se podr\'an evaluar y aplicar procedimientos de terapias respiratorias mediante monitorizaci\'on de usuarios a distancia y realizar con ello el registro de datos que permitir\'an valorar su estado de salud, adem\'as se pretende incentivar al paciente, al  implementar una terapia a trav\'es de estrategias de gamificaci\'on lo cual ayudan en la disposici\'on y atenci\'on. 
+
+\newpage
+
+
+
+
+%=====================================================================================
+\section{Marco de Referencia}
+
+\subsection{Marco Conceptual}
+
+El sustento conceptual de este trabajo está dado por ...
+%algunos de los elementos relacionados con la incorporación de actividades lúdicas y las TIC’s en el proceso de enseñanza y aprendizaje.
+%En este capítulo se van a definir conceptos claves permiten explicar el contexto de un sistema software de terapia respiratoria requerido:
+
+
+\subsubsection{Teleconsulta:}
+
+
+\subsubsection{Incentivo Respiratorio}
+ 
+Un sistema que permite determinar el flujo o el volumen de aire inspirado y brinda informaci\'on al paciente sobre su magnitud.  Entre los beneficios atribuidos a la inspirometr\'ia incentiva se encuentran \cite{23}: 1. Aumento de la capacidad inspiratoria, 2. Incremento de la presi\'on transpulmonar, 3. Fortalecimiento del diafragma y de los m\'usculos intercostales internos, 4. Mejoramiento del rendimiento muscular inspiratorio, 5. Mejoramiento del mecanismo de la tos,  6. Mejoramiento de la atelectasia al revertirse las \'areas alveolares colapsadas, 7. Mejoramiento de la coordinaci\'on neuromuscular, ya que los pacientes pueden conscientemente respirar de manera profunda y lenta, 8. Reducci\'on de la hipoxemia al fomentarse una inspiraci\'on profunda, sostenida, lenta y prolongada, lo cual, provoca una presi\'on m\'axima en los alv\'eolos y una inhalaci\'on m\'axima y h.  Mantenimiento de la permeabilidad de las v\'ias a\'ereas m\'as peque\~{n}as. Actualmente, la efectividad de la fisioterapia incentiva depende de una instrucci\'on adecuada al paciente y de la supervisi\'on por parte de un profesional de salud sobre la ejecuci\'on de la terapia respiratoria \cite{24} puesto que no se encuentran disponibles los sistemas incentivos que lleven registro cuantitativo del desempe\~{n}o de la misma.
+
+\subsubsection{Proceso de espirometr\'ia}
+Se mide la forma como un paciente inhala o exhala vol\'umenes de aire en funci\'on del tiempo. La inspiraci\'on es el proceso en el cual hay ampliaci\'on de la caja tor\'acica y de los pulmones y as\'i ingresa aire u otra sustancia gaseosa a los pulmones. Los equipos empleados en el monitoreo del flujo de aire tanto en la inspiraci\'on como en la espiraci\'on, utilizan dispositivos para la medici\'on de la variable f\'isica conocidos como transductores de presi\'on. Seg\'un el principio de transducci\'on de presi\'on, los dispositivos empleados para determinar el flujo respiratorio se clasifican en cuatro categor\'ias: neumotac\'ografo, tipo turbina, tipo anem\'ometro y tipo ultras\'onico con diferentes principios de operaci\'on \cite{17}. 
+
+
+
+\subsubsection{Teor\'ia de soluci\'on de problemas inventivos (TRIZ)}
+
+Un m\'etodo conocido como teor\'ia para resolver problemas de inventiva, esta metodolog\'ia cuenta con un conjunto de herramientas basado en modelos para la generaci\'on de ideas y soluciones innovadoras. Para el dise\~{n}o de un producto centrado en el usuario se considera, ampliar la visi\'on del problema, realizar un an\'alisis sist\'emico del problema, identificar las restricciones de un nuevo producto y ampliar el campo de b\'usqueda de las soluciones \cite{15}.  Dentro de las estrategias que se encuentran en la literatura para el an\'alisis de dise\~{n}o de productos, el uso de la Teor\'ia de Soluci\'on de Problemas Inventivos, TRIZ, es de utilidad en el dise\~{n}o de nuevos productos en un amplio abanico de \'areas incluido el campo de la salud \cite{16}.  Una de las ventajas que presenta TRIZ frente a otras estrategias de ideaci\'on, es su orientaci\'on a la ciencia y la tecnolog\'ia, lo cual permite que la etapa de convergencia de los procesos de dise\~{n}no se pueda realizar de manera \'agil y estructurada \cite{17}. 
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------
+
+
+\subsection{Marco Teórico}
+
+\subsubsection{Fisioterapia}
+
+
+
+\subsubsection{Manejo de usuarios en Fisioterapia}
+
+Los fisioterapias desempeñan roles de atención primaria para atender las necesidades de los pacientes, estos roles lo desempeñan en función de prestar  servicios de tratamiento respiratorio donde se puedan obtener resultados de los mismos, a partir de ello se deriva un modelo de manejo de pacientes estándar que contiene los elementos:  examen, evaluación, diagnostico, pronostico, intervención y respuestas 
+
+\subsubsection{Sesión de Fisioterapia}
+
+\subsubsection{Ejercicios de Fisioterapia}
+
+\subsubsection{Fisioterapia Digital}
+
+
+
+
+
+%-------------------------------------------------------------------------------------
+
+
+\section{Metodología de la investigación}
+
+La metodología considerada para el desarrollo del proyecto es TRIZ que nos permite clasificar los atributos y características para definir los requerimientos del sistema inspirómetro integrado, esta metodología se desarrolla en conjunto con el grupo de investigación de la Pontificia Universidad Javeriana Cali donde se integran áreas de fisioterapia, ingeniería de sistemas, ingeniería electrónica, diseño, gamificación para plantear atributos principales del sistema en pasado, presente y con ello identificar los atributos futuro y definir así los requerimientos del sistema.
+
+%fases de la metodología en diagrama
+
+\subsection{Sistema presente} Durante el análisis de la metodología que se sigue para realizar la terapia respiratoria se identifica que la terapia no se realiza adecuadamente debido a la falta de adherencia hacia la actividad por parte del paciente, no existe un seguimiento con datos que el terapeuta pueda evaluar, no hay un registro histórico de la evolución del paciente y requiere indicaciones previas del terapeuta respiratorio.
+
+\subsection{Sistema futuro} Dadas las características del sistema presente, se desarrollan las siguientes características generales del sistema futuro, el sistema debe permitir que el paciente se pueda concentrar en su terapia y hacerla conscientemente, permitir adquirir datos, codificar, presentar y almacenar la información de desempeño de la terapia tanto al paciente como al terapeuta mediante una conexión remota, debe permitir la administración de usuarios, una plataforma con operaciones intuitivas para la programación de ejercicios para cada sesión y que permita la prescripción remoto de los mismos.
+
+%-------------------------------------------------------------------------------------
+
+
+\section{Arquitectura del sistema}
+
+%C4
+
+
+
+
+
+
+
+
+%-----------------------------------------------------------------------------------------
+\section{Proceso de Ingeniería de Software}
+
+Bajo los atributos identificados con la metodología TRIZ se desarrollan a continuación los requerimientos funcionales y no funcionales del sistema software propuesto.
+
+
+\subsection{Definición Y Especificación De Requisitos}
+
+En esta sección se detallan los procesos realizados para obtener los requisitos del sistema, la estructura y documentación de los requisitos, validación y priorización de estos.
+
+\subsubsection{Diagrama de Contexto}
+
+\subsubsection{Técnicas de obtención de requisitos}
+
+
+\subsubsection{Definición de requisitos funcionales}
+
+%Modulo Fisioterapeuta============================================ 
+
+ % FUNCIÓN EVALUAR
+\begin{enumerate}[start=1,label={\bfseries RF0\arabic*.}]
+
+    \item El sistema debe tener una funcionalidad para el terapeuta respiratorio que le permita evaluar el estado de un paciente para poder realizar un diagnostico y posteriormente recetar la terapia correspondiente por paciente, si es necesario.
+        \label{RF01}
+            \begin{enumerate}[label*=\arabic*.]
+                \item La funcionalidad para el terapeuta respiratorio debe permitirle evaluar las sesiones realizadas por paciente.
+                
+                \item La funcionalidad para el terapeuta respiratorio debe permitirle la visualización de datos como flujo, frecuencia, volumen respiratorio y saturación de oxigeno por cada sesión por medio de gráficas de desempeño.
+                
+                \item La funcionalidad para el terapeuta respiratorio debe permitirle revisar la evolución del paciente dados los datos de flujo, frecuencia, volumen respiratorio y saturación de oxigeno.  %de las terapias por sesion
+                
+                \item La funcionalidad para al terapeuta respiratorio debe permitirle ver estadísticas de las terapias realizadas y del uso de la aplicación por los pacientes. %TABLAS?
+                
+              
+            \end{enumerate}
+
+    %EJERCICIOS     --como quedan descritos? animaciones, textos ?
+    \item El sistema debe tener una funcionalidad para al terapeuta respiratorio que le permita programar  ejercicios por cada sesión en la aplicación.
+        
+        \label{RF01}
+            \begin{enumerate}[label*=\arabic*.]
+            
+                \item La funcionalidad de programar ejercicios para el terapeuta respiratorio que le permita cargar de ejercicios definidos en texto con sus tareas correspondientes. %completar si son descritos, texto o con animaciones
+                 
+                \item La funcionalidad de programar ejercicios para el terapeuta respiratorio debe tener una funcionalidad para al terapeuta respiratorio que le permita el almacenamiento de ejercicios prescritos. %completar
+                
+                \item La funcionalidad de programar ejercicios para el terapeuta respiratorio debe permitir modificar los ejercicios, cargar o eliminar tareas prescritas
+                
+                \item La funcionalidad de programar ejercicios para el terapeuta respiratorio debe permitir establecer parámetros de ejercicios por conexión remota
+     
+     
+                
+            \end{enumerate}
+            
+    %ORIENTAR
+    \item  El sistema debe tener una funcionalidad para al terapeuta respiratorio que le permita orientarse ya sea en el uso de la aplicación, como en el manejo de los ejercicios establecidos.
+    
+    \label{RF01}
+            \begin{enumerate}[label*=\arabic*.]
+                %Posible requerimiento
+                \item La funcionalidad para al terapeuta respiratorio debe permitir notificar los ejercicios tanto los que se han realizado como los que no han sido realizados por los pacientes. 
+                
+                \item La funcionalidad para al terapeuta respiratorio debe incluir una guía de usuario que especifique una secuencia para usar la aplicación correctamente. %completar
+            \end{enumarate}
+            
+    
+    %PACIENTES
+    \item  El sistema debe tener una funcionalidad para al terapeuta respiratorio que le permita la gestión de los parámetros de cada sesión por medio de los perfiles de cada paciente, parámetros tales como  el rango de medición de flujo inspirado, volumen, frecuencia respiratoria y saturación de oxigeno por cada paciente. %preguntar       
+    \label{RF01}
+            \begin{enumerate}[label*=\arabic*.]
+                \item La funcionalidad de gestión de parámetros que le permita al terapeuta establecer rangos en volumen, frecuencia y saturación de oxigeno por medio de teleconsulta. %videollamada?
+                
+                \item La funcionalidad para al terapeuta respiratorio debe permitir establecer parámetros de flujo inspirado y asignar los ejercicios correspondientes por paciente
+                
+                
+            \end{enumerate}
+            
+    %DIAGNOSTICO
+    \item El sistema debe tener una funcionalidad para al terapeuta respiratorio que le permita realizar un diagnostico dados los datos del paciente.%completar
+    
+    \item  El sistema debe tener una funcionalidad de envió de vídeos para brindar realimentaciones de manera cualitativa e instrucciones necesarias para la terapia.
+    
+    
+    %ALMACENAR DATOS
+    \item El sistema debe tener una funcionalidad para al terapeuta respiratorio que le permita guardar los cambios realizados en la plataforma ya sea en modificaciones de las sesiones o pacientes.
+    
+    
+    
+            
+%Modulo Paciente===================================================================
+
+ %ORIENTAR
+    \item El sistema debe tener una funcionalidad que permita orientar al paciente  para la realización de un ejercicio de una terapia respiratoria. 
+    \label{RF01}
+            \begin{enumerate}[label*=\arabic*.]
+            
+                \item La funcionalidad de orientar al paciente debe incluir una demostración con los pasos o secuencia a seguir sobre como manejar la aplicación, como usar el inspirómetro electrónico y como realizar el ejercicio prescrito.
+                
+                \item La funcionalidad de orientar al paciente de manera sensitiva debe permitir generar una secuencia en la terapia por cada sesión establecida al paciente, los ejercicios permitirán el estimulo que el paciente  necesita para su recuperación. %que serían las cualidades de la orientación
+                
+                \item La funcionalidad de orientar al paciente debe contar con una guía de usuario que debe incluir una demostración con los pasos o secuencia a seguir sobre como manejar la aplicación.
+                
+                \item La funcionalidad de orientar al paciente debe contar con un realimentación después de una sesión realizada que permita dar a conocer resultados y consejos de avance en terapia para una próxima sesión, esta funcionalidad se dará con la intervención del terapeuta al finalizar cada sesión.
+    
+                \item La funcionalidad de orientar al paciente debe mostrar datos de evolución que permitan conocer el estado en que se encuentra el paciente para completar una terapia respiratoria.
+                
+                \item La funcionalidad de orientar al paciente debe contar con una guía sobre como usar el inspirómetro electrónico y como realizar el ejercicio prescrito, resaltando también los limites de seguridad del sistema.
+            \end{enumerate}
+            
+            
+        %enviar realimentacion por otros medios no solo visual
+
+%Modulo de  Administración============================================    
+
+ 
+    \item El sistema debe contar con una estructura de gestión de usuarios.
+    %Grupos de pacientes  
+    \item El sistema debe permitir a los terapeutas  administrar grupos de pacientes para asignar las respectivas sesiones.
+        \begin{enumerate}[label*=\arabic*.]
+            \item La funcionalidad de grupo de pacientes debe permitir a los terapeutas la creación y administración de grupos de pacientes, los cuales van a tener en su plataforma registrados con los datos demográficos de cada paciente.
+            
+            \item La funcionalidad de grupo de pacientes debe permitir a los terapeutas asignar terapias o en los que se puedan definir la fecha de inicio y la duración máxima por cronómetro para realizar cada actividad para este caso el terapeuta debe seleccionar y asignar una actividad previamente.
+        \end{enumerate}
+        
+    \item El sistema debe mostrar información personalizada para cada usuario
+            
+ 
+     
+         
+    
+%Modulo sistema central de procesamiento===========================================
+ 
+    
+    %Adquirir datos
+    
+    \item El sistema debe permitir Adquirir, presentar y almacenar los datos del desempeño y seguimiento de la terapia (i.e. cuánto le falta, cuánto avanzó) al fisioterapeuta y al paciente por conexión remota.
+     \label{RF01}
+            \begin{enumerate}[label*=\arabic*.]
+                
+                \item El sistema debe tener una funcionalidad de toma de datos del paciente que permita agrupar la captura de datos en un historial con datos del paciente, que registre los datos de flujo, frecuencia respiratoria por cada sesión 
+                
+                \item La funcionalidad de toma de datos del paciente debe permitir hacer el registro de datos mediante un método cuantitativo de grabación de datos. Mediante los estímulos capturados uno a uno desde el inspirómetro %evaluar
+                
+                \item La funcionalidad de codificar la variable física medida a partir de los datos derivados del flujo respiratorio, frecuencia respirato %Codificar la información de la variable física medida. (estructura de datos)
+            
+            \end{enumerate}
+            
+    \item La funcionalidad de toma de datos del paciente debe permitir hacer el registro de datos mediante un método cuantitativo de grabación de datos.
+            
+    %Tratamiento de datos
+        
+    \item El sistema debe encargarse de la conversión de datos que recibe desde el inspirómetro, presentarlos en volumen y frecuencia estimados de un ejercicio realizado por el paciente.
+       
+
+    
+    %Trasmisión de datos
+    
+    \item El sistema debe contar con una API para permitir la trasmisión de datos.
+    
+   
+    
+    %Almacenamiento de datos
+    
+   
+    \item La funcionalidad de toma de datos del paciente debe garantizar el auto-guardado por cada actividad realizada.
+    
+    \item El sistema debe permitir estructurar los datos y mostrarlos en tablas de frecuencia.
+    
+    \item El sistema debe permitir almacenar la información adquirida de manera local proveniente de los ejercicios de fisioterapia, debe contar con capacidad de memoria a partir de un formato estándar de memoria.
+    
+    \item El sistema debe permitir almacenar los datos adquiridos de la medición de flujo inspirado proveniente del inspirómetro de manera local.
+    
+  
+    
+    
+    %Gamificación
+    \item El sistema debe permitir integrar un modulo de gamificación que permitira acoplarse con el sistema de ejercicios para programar por el usuario terapeuta.
+    
+     
+    
+    %%Juego
+    \item El sistema debe permitir mantener un flujo y volumen respiratorio constante indicado en los ejercicios prescritos por el terapeuta.
+    %porque eso le va a permitir que el flujo de aire llegue a los alveolos y realice el íntercambio, La parte de ser constante y laminar hace que la bolita o lo que se mira en el incentivo, Este quieta en un solo lugar, Sin subir o bajar,Entonces esa bolita quieta y a la altura  me permite saber que si lo esta haciendo bien, Si, pues dependiendo del volumen a donde el profesional le indique a la persona llegar. Ya que el dispositivo tiene aun lado marcado como en rayitas los niveles de volumen que se esta alcanzando
+    \label{RF01}
+            \begin{enumerate}[label*=\arabic*.]
+                \item La funcionalidad de mantener un flujo y volumen constante en cada ejercicio deber permitir identificar si el paciente esta siguiendo los pasos indicados en el ejercicio.%preguntar
+                \item La funcionalidad de mantener un flujo y volumen constante en cada ejercicio deber permitir registrar los niveles de volumen y frecuencia respiratoria 
+            \end{enumerate}
+    
+        
+
+%https://www.gloomaps.com/3zr2f3aYfo
+
+\end{enumerate}
+
+
+\subsubsection{Definición de requisitos no funcionales}
+
+\begin{enumerate}[start=1,label={\bfseries RF0\arabic*.}]
+
+
+\item  El sistema no debe ser exigente en tecnología para que pueda ser usado por cualquier paciente con un sistema tecnológico de comunicación. %Android
+
+\item El sistema debe estar en la capacidad de funcionar en modo offline, es decir soporte sin conexión, cuando las condiciones de conexión con el servidor sean adversas, asegurando que la información no se pierda a causa de estos imprevistos
+
+\item El sistema debe permitir que cualquier usuario que no conozca a profundidad el funcionamiento de las TIC tenga un buen desempeño con el manejo de la herramienta
+
+\item El sistema debe asegurar una disponibilidad del 99.0 \%
+
+\item El sistema debe ser desarrollado bajo los principios de diseño SOLID
+
+\item El sistema debe tener un tiempo TTI menor o igual a 5 segundos
+
+ \item El sistema debe cumplir con parámetros ACID para el relacionamiento con bases de datos
+ 
+\item El sistema debe contar con las características necesarias para hacer un deploy sencillo
+
+\item El sistema debe contar con una función de backup y de recuperación ante fallos
+\item El sistema debe soportar concurrencia de múltiples usuarios
+\item El sistema debe contar con los protocolos necesarios para asegurar un funcionamiento seguro a través de Internet, es decir, que la información enviada y recibida este protegida contra ataques de robo información y suplantación de identidad. 
+\item El sistema no debería ser invasivo.
+        
+\item El sistema debe favorecer la adherencia al tratamiento de fisioterapia.
+
+\end{enumerate}
+
+
+
+%-------------------------------------------------------------------------------------
+
+
+
+
+
+\newpage
+
+
+
+\section{Desarrollo del Sistema}
+
+\section{Análisis de Resultados}
+
+
+
+
+
+%-------------------------------------------------------------------------------------
+\section{Conclusiones y recomendaciones}
+
+
+\section{Trabajos Futuros}
+
+
+
+
+\newpage
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAFIA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{biblio.bib}
+\bibliographystyle{IEEEtran}
+\nocite{1}
+\nocite{2}
+\nocite{3}
+
+%%%%%%%%%%%%%%%%
+% GENERAL INDEX
+%%%%%%%%%%%%%%%%
+%\printindex
+
+
+
+\section{Anexos}
+
+
+
+
+\end{document}
+
+
