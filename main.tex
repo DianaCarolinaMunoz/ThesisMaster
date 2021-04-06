@@ -75,19 +75,19 @@
 
 
 %=====================================================================================
-%\section*{Resumen}
+\section*{Resumen}
 
 
-%\pagenumbering{gobble}
-%\newpage
+\pagenumbering{gobble}
+\newpage
 
 %=====================================================================================
-%\section*{Abstract}
+\section*{Abstract}
 
 
 
-%\pagenumbering{gobble}
-%\newpage
+\pagenumbering{gobble}
+\newpage
 
 %=====================================================================================
 
@@ -110,7 +110,7 @@
 
 %\addtocontents{toc}{\hspace{-7.5mm} \textbf{Capítulos}}
 %\addtocontents{toc}{\hfill \textbf{Página} \par}
-%\addtocontents{toc}{\vspace{-2mm} \hspace{-7.5mm} \hrule \par}
+\addtocontents{toc}{\vspace{-2mm} \hspace{-7.5mm} \hrule \par}
 
 
 
@@ -157,7 +157,7 @@ En este proyecto de grado se desarrollar\'a un software que se integrar\'a a un 
 
 %\frontmatter{In}
 
-%\pagenumbering{arabic}
+\pagenumbering{arabic}
 
 
 
@@ -342,6 +342,9 @@ Monitorear la frecuencia respiratoria, volumen y saturación de oxigeno
 
 \subsubsection{Historial clínico}
 
+
+\subsubsection{Visualización de datos}
+
 \subsubsection{Resultados de una Terapia Respiratoria}
 
 Cada paciente o participante de una terapia respiratoria debe tener realimentación de los resultados 
@@ -358,13 +361,13 @@ La metodología considerada para el desarrollo del proyecto es TRIZ que nos perm
 \subsection{Sistema presente} 
 
 \subsubsection{Ventana 1}
-En esta ventana se analizaron los diferentes elementos de ayuda para la recuperación pulmonar con sistemas actuales, se identifica que estos sistemas de ayuda para la recuperación de la capacidad pulmonar, siempre van acompañados de una terapia o denominada fisioterapia respiratoria, que como se explico anteriormente, es la encargada de definir que tipo de terapia es la mejor para cada complicación respiratoria.
+En esta ventana se analizaron los diferentes elementos de ayuda para la recuperación pulmonar de un paciente con sistemas actuales, se identifica que estos sistemas siempre van acompañados de una terapia o denominada fisioterapia respiratoria, que como se explico anteriormente, es la encargada de definir que tipo de terapia es la mejor para cada complicación respiratoria.
 
 
 
 \subsubsection{Ventana 2}
 
-Se realiza el  análisis del supersistema, lo cual es todo el contexto donde se describen los elementos de ayuda para la recuperación de la capacidad pulmonar, en esta ventana se analizan las entidades o empresas que trabajan en la recuperación de la salud respiratoria, como también otros sectores relacionados con complicaciones respiratorias. 
+Se realiza el  análisis del supersistema, lo cual es en contexto donde se describen los elementos de ayuda para la recuperación de la capacidad pulmonar, en esta ventana se analizan las entidades o empresas que trabajan en la recuperación de la salud respiratoria, como también otros sectores relacionados con complicaciones respiratorias. 
 
 En medicina, se utiliza respiración asistida en procesamientos quirúrgicos, donde se tienen en cuenta también técnicas respiratorias y fármacos para personas con enfermedades pulmonares. En industria, existen empresas que realizan el diseño y construcción de áreas limpias, manejo y control de ambientes hospitalarios y farmacéuticos. En lo social, esta directamente relacionado con el contagio de COVID por las personas que necesitan un tratamiento respiratorio asistido.
 
@@ -426,12 +429,12 @@ Bajo los atributos identificados con la metodología TRIZ se desarrollan a conti
 
 En esta sección se detallan los procesos realizados para obtener los requisitos del sistema, la estructura y documentación de los requisitos, validación y priorización de estos.
 
-\subsubsection{Diagrama de Contexto}
+\subsubsection{Diagrama de contexto}
 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.45]{imag/C4-Dcontext.png}
+\includegraphics[scale=0.45]{imag/C4-Diagram contexto.png}
 \caption{Diagrama de contexto de sistema software de capacidad pulmonar. }
 \label{4}
 \end{figure}
@@ -441,7 +444,13 @@ En esta sección se detallan los procesos realizados para obtener los requisitos
 
 \begin{enumerate}
     \item \textbf{Reuniones grupales:} Inicialmente ser realizan reuniones grupales con los principales actores del sistema, tanto los posibles usuarios como terapeuta respiratorio como los desarrolladores del sistema de las diferentes áreas, software, electrónica y diseño
-    \item \textbf{Encuestas:} Se realizo una encuesta dirigida a fisioterapeutas tanto externos como internos del proyecto, con el propósito de identificar atributos comunes con los mencionados en el grupo de investigación, para lograr el objetivo, se realizaron preguntas orientadas a las terapias respiratorias, los datos que se evalúan actualmente y las metodologías utilizadas.
+    \item \textbf{Encuestas:} 
+        \begin{enumerate}
+            \item Encuesta dirigida a fisioterapeutas tanto externos como internos del proyecto, con el propósito de identificar atributos comunes con los mencionados en el grupo de investigación, para lograr el objetivo, se realizaron preguntas orientadas a las terapias respiratorias, los datos que se evalúan actualmente y las metodologías utilizadas.
+            \item Encuesta dirigida a los pacientes con el fin de conocer la experiencia de los pacientes que han realizado terapia respiratoria con el inspirómetro incentivo en cuanto a la terapia y el acompañamiento con el terapeuta.
+        \end{enumerate}
+    
+    
 \end{enumerate}
 
 
@@ -662,11 +671,11 @@ En esta sección se detallan los procesos realizados para obtener los requisitos
 
 
 
-\subsubsection{Definición de Requisitos tipo Restricción}
+\subsubsection{Definición de requisitos tipo restricción}
 
 \begin{enumerate}[start=1,label={\bfseries RTR\arabic*.}]
 
-\item Poner el mínimo número de comandos de operación para el paciente. Debe tener incidencia en el rango de diseño del atrb. 1
+\item Poner el mínimo número de comandos de operación para el paciente.
 
 
 \end{enumerate}
@@ -682,19 +691,36 @@ En esta sección se detallan los procesos realizados para obtener los requisitos
 
 \subsection{Arquitectura del sistema}
 
-%C4
+%C1
 
-Dados las especificaciones de los servicios de terapia respiratoria y los requerimientos desarrollados se construye la siguiente arquitectura general del sistema
+Dados las especificaciones de los servicios de terapia respiratoria y los requerimientos desarrollados se construye la siguiente arquitectura del sistema
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.45]{imag/C4-Sistema.png}
+\includegraphics[scale=0.5]{imag/C4-Sistema1.png}
 \caption{Arquitectura de primer nivel del sistema de terapia respiratoria}
 \label{5}
 \end{figure}
 \FloatBarrier
 
-Se identifican funcionalidades especificas del terapeuta respiratorio para poder construir el sistema.
+Se identifican funcionalidades especificas del sistema y se separan los servicios:
+
+%C2
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.25]{imag/C4-Nivel2.png}
+\caption{Arquitectura de segundo nivel del sistema de terapia respiratoria}
+\label{6}
+\end{figure}
+\FloatBarrier
+
+
+%C3
+
+
+%C4
 
 
 
