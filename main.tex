@@ -77,6 +77,12 @@
 %=====================================================================================
 \section*{Resumen}
 
+Uno de los principales objetivos de la fisioterapia respiratoria es conseguir una mejoría de los síntomas en función de la oxigenación pulmonar, actualmente la pandemia de la COVID-19 y sus variantes han puesto en reto a los fisioterapeutas para responder en cada momento las necesidades de salud de cada uno de los individuos \cite{28}. 
+
+Se identificó por lo tanto, la necesidad de atención remota para pacientes con COVID-19 o que se están recuperando de esta enfermedad y que pueda ser guiada con los mismos estándares de asistencia médica requerida.
+
+En los primeros cuatro capítulos se introduce el tema de investigación en el que se basa el trabajo de grado de maestría junto con sus objetivos, alcances, y marco de referencia además de explicar la importancia de llevar a cabo esta investigación; en el quinto capítulo se presenta el proceso de ingeniería de software donde se desarrollan y se priorizan los requisitos del sistema, soportando con definiciones y análisis, así mismo se especifican los pasos para la elicitación de requisitos; en el sexto capítulo se presentan la arquitectura de software y se especifica cada uno de los niveles de diseño que cumplen con los requisitos establecidos; en el séptimo capítulo se explican las tecnologías de implementación que posibilitó la comunicación del sistema de software integrado a un inspirómetro; el octavo capitulo presenta el modelo de aplicación web y todas las características de la interfaz de usuario desarrollada donde se evidencian también los resultados obtenidos después de la comunicación del sistema integrado; en el noveno capitulo se encuentran las fuentes de código que soportan esta implementación y por último se presentan las conclusiones, trabajos futuros y anexos con el fin de dar continuidad a la investigación y lograr la aplicación de la misma. 
+
 
 \pagenumbering{gobble}
 \newpage
@@ -94,7 +100,7 @@
 \section*{Glosario}
 \begin{itemize}
 
-
+\item \textbf{API:} Representa la capacidad de comunicación entre componentes software.
 \item \textbf{Apnea:} Es una pausa respiratoria.
 \item \textbf{Capacidad Vital:} Máximo volumen de gas pulmonar molivilizable. Es la suma del volumen corriente y los volúmenes de reserva espiratoria e inspiratoria \cite{19}. 
 \item \textbf{Capacidad Inspiratoria:} Volumen de gas que puede ser introducido en el pulmón con un esfuerzo inspiratorio máximo tras una espiración máxima lenta \cite{19}.
@@ -129,7 +135,7 @@
 %ordenar alfabetico
 
 
-Volumen Espiratorio en 1 segundo (FEV1), Capacidad Vital Forzada (FVC), FEV1/FVC (FEV1%), Flujo Espiratorio Forzado (FEF) y Flujo Espiratorio Pico (PEF) [1]. El FEV1 (Volumen espiratorio forzado) es una medida de la cantidad de aire que se puede exhalar en un segundo después de una inhalación profunda, mientras que el FEV6 (Volumen espiratorio forzado) indica la cantidad de aire que se puede exhalar en seis segundos a partir de una inhalación profunda. A veces, FEV6 puede ser reemplazado por FVC (Capacidad Vital Forzada) porque tanto FEV6 como FVC arrojan los mismos valores. Ambos FEV1 y FEV6
+%Volumen Espiratorio en 1 segundo (FEV1), Capacidad Vital Forzada (FVC), FEV1/FVC (FEV1%), Flujo Espiratorio Forzado (FEF) y Flujo Espiratorio Pico (PEF) [1]. El FEV1 (Volumen espiratorio forzado) es una medida de la cantidad de aire que se puede exhalar en un segundo después de una inhalación profunda, mientras que el FEV6 (Volumen espiratorio forzado) indica la cantidad de aire que se puede exhalar en seis segundos a partir de una inhalación profunda. A veces, FEV6 puede ser reemplazado por FVC (Capacidad Vital Forzada) porque tanto FEV6 como FVC arrojan los mismos valores. Ambos FEV1 y FEV6
 
 
 
@@ -332,49 +338,49 @@ Un m\'etodo conocido como teor\'ia para resolver problemas de inventiva, esta me
 
 \subsubsection{Fisioterapia Respiratoria}
 
-Son procedimientos físicos utilizados en el tratamiento de pacientes con una incapacidad, enfermedad o lesión del aparato respiratorio, con el fin de alcanzar y mantener la rehabilitación funcional y evitar una disfunción \cite{26}.
+Son procedimientos físicos utilizados en el tratamiento de pacientes con una incapacidad, enfermedad o lesión del aparato respiratorio, con el fin de alcanzar y mantener la rehabilitación funcional y evitar una disfunción \cite{26}. 
+
+Los fisioterapias respiratorias desempeñan roles de atención primaria para atender las necesidades de los pacientes mediante servicios de tratamiento respiratorio, estos servicios se guían mediante un proceso estándar de manejo de pacientes y usuarios como se presenta a continuación:
 
 %El sistema software de fisioterapia respiratoria pretende brindar un primer acercamiento digital que permita analizar el comportamiento para este proyecto la idea principal es desarrollar un sistema que realice una técnica para rehabilitar la función pulmonar y prevenir complicaciones presentes en el paciente a tratar.
 
-Los fisioterapias respiratorias desempeñan roles de atención primaria para atender las necesidades de los pacientes, estos roles se basan en  servicios de tratamiento respiratorio, se deriva un flujo estándar del comportamiento de una fisioterapia respiratoria que se presenta a continuación:
+%Los fisioterapias respiratorias desempeñan roles de atención primaria para atender las necesidades de los pacientes mediante servicios de tratamiento respiratorio, se deriva un flujo estándar del comportamiento de una fisioterapia respiratoria que se presenta a continuación:
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.45]{imag/C4-Terapeuta.png}
-\caption{Proceso de manejo de pacientes y usuarios por terapeuta. \textit{Guía para la práctica fisioterapéutica \cite{5}.}}
+\caption{Proceso de manejo de pacientes y usuarios. \textit{Guía para la práctica fisioterapéutica \cite{5}.}}
 \label{2}
 \end{figure}
 \FloatBarrier
 
-Es importante definir en que consisten los módulos representados para resolver principalmente el esquema de arquitectura que se definirá mas adelante.
+Es importante definir en que consisten los módulos representados en el proceso de manejo de pacientes y usuarios para identificar el contexto de arquitectura que se define para el sistema de fisioterapia respiratoria.
 
 \textbf{Examen}
-\begin{itemize}
-    \item La historia clínica: es una recopilación sistemática de datos, del pasado y del presente, relacionados con el motivo por el cual el paciente solicita los servicios de un fisioterapeuta
-    \item Evaluación del sistema pulmonar: durante la fase de elaboración de la  historia clínica los fisioterapeutas solicitan información sobre el sistema pulmonar para determinar si hay síntomas que sugieran la necesidad de otra evaluación médica.
-    \item Pruebas y parámetros: son los medios para recopilar datos sobre la persona y es la fase donde el fisioterapeuta decide los parámetros específicos que el paciente debe tener en cuenta para realizar una prueba de sistema pulmonar, con esta fase completada se puede emitir un diagnostico y pronóstico y determinar un plan de atención.
-\end{itemize}
+
+El primer paso de este proceso de fisioterapia respiratoria en el examen del sistema pulmonar que consiste en obtener o visualizar la información disponible sobre los síntomas del paciente y así poder determinar la necesidad de la evaluación médica que se va a realizar, en este paso también se pretende realizar la recopilación de los datos necesarios para una historia clínica. En esta etapa, el fisioterapeuta decide los parámetros específicos que el paciente debe tener en cuenta para realizar una prueba de sistema pulmonar, las pruebas y parámetros son medios también para recopilar datos sobre el estado del paciente. 
+
 
 \textbf{Evaluación}
-\begin{itemize}
-    \item Interpretan la respuesta de la persona o paciente a las pruebas y parámetros
-    \item Integran los datos de las pruebas y los parámetros con otra información recopilada al hacer la historia clínica
-    \item Determinar un diagnóstico que pueda abordarse con el manejo por parte del fisioterapueta
-    \item Determinar un pronóstico, que incluya objetivos para el manejo por parte del fisioterapeuta
-    \item Elaborar un plan de atención
-\end{itemize}
 
-\textbf{Diagnóstico}
-\newline
-Recopilar y clasificar datos en categorías según el esquema de clasificación relevante para el profesional
+Consiste en interpretar la respuesta del paciente a las pruebas y parámetros, en esta etapa se integran los datos y se determina un diagnostico que pueda abordarse y un pronostico que incluya objetivos de la evaluación. Con esta fase completada se puede emitir un diagnostico y pronóstico y determinar un plan de atención.
+
+Una evaluación de fisioterapia tiene en cuenta lo siguiente:
+
 \begin{itemize}
-    \item Los esquemas de clasificación deben respetar los limites impuestos a la profesión por la ley que puede regular tipos de categorías de diagnóstico
-    \item Las pruebas y los parámetros necesarios para confirmar el diagnóstico deben encontrarse dentro del ámbito legal 
+    \item \textbf{Signos:} parámetros que presenta el paciente y puede ser vistos por el fisioterapeuta de forma objetiva.
+    \item \textbf{Síntomas:} parámetros que que solamente son descritos por el paciente y no son observables. 
 \end{itemize}
 
 
+\textbf{Diagnostico y Pronóstico}
+
+Dos actividades que se realizan en paralelo donde se recopila y se clasifican los datos en categorías en base al esquema de evaluación que maneje el profesional, los esquemas de clasificación deben respetar los limites impuestos a la profesión por la ley que puede regular tipos de categorías de diagnóstico \cite{5}.
 
 
+\textbf{Intervención}
+
+En esta etapa, el profesional elige un tratamiento fisioterapéutico donde se incorporan los objetivos a corto, mediano y largo plazo con resultados medibles y negociados en colaboración con el paciente o el responsable del paciente\cite{27}. 
 
 
 \subsubsection{Sesión de Fisioterapia}
@@ -411,9 +417,9 @@ Una sesión de fisioterapia incluye los ejercicios, resultados, intervención y 
 %explicar proyecto
 
 
-Este proyecto abarca con la posibilidad de que un fisioterapeuta pueda realizar una prescripción y luego pueda revisar los resultados de un incentivo respiratorio.
+%Este proyecto abarca con la posibilidad de que un fisioterapeuta pueda realizar una prescripción y luego pueda revisar los resultados de un incentivo respiratorio.
 
-\subsubsection{Ejercicio de Fisioterapia para Paciente}
+%\subsubsection{Ejercicio de Fisioterapia para Paciente}
 
 %complementar informacion
 
@@ -462,32 +468,57 @@ Este proyecto abarca con la posibilidad de que un fisioterapeuta pueda realizar 
 
 
 
+\subsubsection{Capacidad Vital} 
 
+En espirometría es el volumen máximo que somos capaces de inspirar y espirar en condiciones normales, se puede calcular teniendo en cuenta la siguiente fórmula, donde se tiene en cuenta que los valores normales están en el rango de 65 a 75 mL/Kg.
 
-
-
-
-
-
-
-\subsubsection{Evaluación de Fisioterapia}
-
-La evaluación de fisioterapia tiene en cuenta lo siguiente:
 
 \begin{itemize}
-    \item \textbf{Signos:} es algo que presenta el paciente y puede ser visto por terceros de forma objetiva.
-    \item \textbf{Síntomas:} solamente son descritos por el paciente y no son observables. 
-    \item \textbf{Auscultación:} Escuchar los ruidos del cuerpo de forma directa o con instrumentos como es estetoscopio.
-    \item \textbf{Rayos x:} un examen médico no invasivo que ayuda a los médicos a diagnosticar y tratar las condiciones médicas. 
+    \item \textbf{Para hombre:} CV (mL)=27,63 – (0,112 * edad)* altura (cm)
+    \item \textbf{Para mujer:} CV (mL)= 21,78 – (0,101 * edad) * altura (cm)
 \end{itemize}
+
+Dentro de los parámetros espirómetricos también se encuentra definida la capacidad vital forzada CVF que es la cantidad máxima de aire exhalado forzadamente partiendo de una inhalación total; el pico de flujo espiratorio PEF como flujo instantáneo máximo de la maniobra CVF \cite{29}.
+
+El volumen espiratorio forzado en el primer segundo VEF1 se conoce como cantidad del aire exhalado abruptamente en el primer segundo después de una inhalación máxima. El valor normal es \geq 80 \%.
+
+
+
+\subsubsection{Visualización de datos espirométricos}  %investigar
+
+Los datos de inspirómetro o espirométricos se ven como gráficos llamados \textit{espirogramas} donde se muestran las medidas del volumen exhalado en litros, el tiempo en segundos y las tasas de flujo de aire en litros por segundo. Hay dos tipos de espirogramas que se utilizan en la muestra de flujo respiratorio:
+
+\begin{itemize}
+    \item \textbf{Curva de volumen - tiempo}: Contiene los puntos de medición correspondientes a VEF1 y FVC.
+
+        \begin{figure}[ht]
+        \centering
+        \includegraphics[scale=0.7]{imag/vvstiempo.png}
+        \caption{Curva de volumen vs tiempo. }
+        \label{4}
+        \end{figure}
+        \FloatBarrier
+
+    
+    \item \textbf{Curva de flujo - volumen}: Muestra las tasas de flujo de aire en función del volumen exhalado. Esta curva también contiene puntos correspondientes al PEF y CVF.
+    
+        \begin{figure}[ht]
+        \centering
+        \includegraphics[scale=0.7]{imag/flujovs.png}
+        \caption{Curva de flujo vs volumen. }
+        \label{4}
+        \end{figure}
+        \FloatBarrier
+    
+    
+\end{itemize}
+
+Para la visualización de los datos del proyecto se definió que la curva flujo - volumen se define bajo un rango de variación de flujo respiratorio de  0 - 1200 centímetros cúbicos por segundo o cc/s teniendo en cuenta que el fisioterapeuta respiratorio necesita conocer cuando el paciente ha logrado alcanzar 600, 900 y 1200 cc/s.
 
 
 \subsubsection{Prescripción}
 
-El fisioterapeuta puede realizar una prescripción con la asignación de las variables y  valores correspondientes
-
-
-\textbf{Tratamiento de datos en una prescripción}
+El fisioterapeuta respiratorio puede realizar una prescripción con la asignación de las variables y valores correspondientes a cada uno de los datos definidos a continuación: 
 
 \begin{itemize}
     \item \textbf{Frecuencia:} Cada cuantas horas se debe realizar un ejercicio, es determinada por el fisioterapeuta y se define por el numero veces que realiza una sesión de fisioterapia, ejemplo: 3 series de 10 repeticiones, cada 8 horas, por una semana.
@@ -497,13 +528,13 @@ El fisioterapeuta puede realizar una prescripción con la asignación de las var
     \item \textbf{Repeticiones:} Son las veces por serie de cada sesión
 \end{itemize}
     
-Un ejemplo de una prescripción es cuando un paciente necesita alcanzar el 50-70\% de Capacidad Vital (CV), en 3 series de 10 repeticiones con 1 minuto de descanso.
+Un ejemplo de una prescripción es cuando un paciente necesita alcanzar el 50-70\% de capacidad vital en 3 series de 10 repeticiones con 1 minuto de descanso.
 
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.45]{imag/prescripcion.png}
-\caption{Diagrama de contexto de sistema software de capacidad pulmonar. }
+\caption{Ejemplo de prescripción}
 \label{4}
 \end{figure}
 \FloatBarrier
@@ -513,42 +544,7 @@ Un ejemplo de una prescripción es cuando un paciente necesita alcanzar el 50-70
 
 
 
-\subsubsection{Visualización de Datos de Espirometría}  %investigar
-
-Los datos espirométricos se ven como gráficos llamados \textit{espirogramas} donde se muestran las medidas del volumen exhalado
-en litros, el tiempo en segundos y las tasas de flujo de aire en litros por segundo. Hay dos tipos de espirogramas que se utilizan en la muestra de flujo respiratorio:
-
-La visualización de datos de una sesión de Fisioterapia esta dada por: 
-
-\begin{itemize}
-    \item \textbf{Curva de Volumen-Tiempo}: Contiene los puntos de medición correspondientes a FEV1 y FEV.
-        \begin{figure}[ht]
-        \centering
-        \includegraphics[scale=0.45]{imag/volumentiempo.png}
-        \caption{Curva de Volumen / tiempo. }
-        \label{4}
-        \end{figure}
-        \FloatBarrier
-
-    
-    \item \textbf{Curva de Flujo-Volumen}: Muestra las tasas de flujo de aire en función del volumen exhalado. Esta curva también contiene puntos correspondientes al PEF y FVC.
-    
-        \begin{figure}[ht]
-        \centering
-        \includegraphics[scale=0.45]{imag/volumentiempo.png}
-        \caption{Curva de Flujo / volumen. }
-        \label{4}
-        \end{figure}
-        \FloatBarrier
-    
-    
-\end{itemize}
-
-
-Para la visualización de los datos en el proyecto se definió un rango de variación de flujo respiratorio de: [ 0 - 1200 ] centímetros cúbicos por segundo cc/s. Para el fisioterapeuta respiratorio, es importante conocer cuando el paciente ha logrado alcanzar 600, 900 y 1200 (cc/s).
-
-
-\subsubsection{Resultados de una Terapia Respiratoria}
+%\subsubsection{Resultados de una Terapia Respiratoria}
 
 %Cada paciente o participante de una terapia respiratoria debe tener realimentación de los resultados media
 
@@ -1063,19 +1059,20 @@ Se establece como marco de trabajo de desarrollo, React conocido para la creaci�
 
 
 
+\subsection{API}
+
+Se implementó el proyecto API con los servicios de comunicación que se definieron en base a los requerimientos priorizados, se describen a continuación: 
 
 
-\section{Proyecto API}
-
-
-\subsection{Comunicación local entre aplicación Web y API}
+\subsubsection{Comunicación local entre aplicación Web y API}
 
 \begin{enumerate}
-    \item \textbf{Servicio de autenticación:} El el usuario valido es el usuario tipo fisioterapeuta y tipo paciente con el nombre del servicio authenticateUser, con la petición en el ejemplo de a continuación se obtiene el token, el cual sera necesario para acceder a los otros servicios que requieren. autorización.
+    \item \textbf{Servicio de autenticación:} 
+    El el usuario valido es el usuario tipo fisioterapeuta y tipo paciente con el nombre del servicio authenticateUser, con la petición en el ejemplo de a continuación se obtiene el token, el cual sera necesario para acceder a los otros servicios que requieren. autorización.
             \begin{figure}[ht]
             \centering
             \includegraphics[scale=0.4]{imag/POSTAUS.png}
-            \caption{Petición http post en postman para usuario fisioterapeuta}
+            \caption{Petición http post en postman de autenticación de usuario fisioterapeuta}
             \label{6}
             \end{figure}
             \FloatBarrier
@@ -1083,35 +1080,68 @@ Se establece como marco de trabajo de desarrollo, React conocido para la creaci�
             \begin{figure}[ht]
             \centering
             \includegraphics[scale=0.4]{imag/pacienteau.png}
-            \caption{Petición http post en postman para usuario paciente}
+            \caption{Petición http post en postman de autenticación de usuario paciente}
             \label{6}
             \end{figure}
             \FloatBarrier
             
-    \item \textbf{Servicio de consulta a todos los pacientes} Para obtener el id del usuario del cual se requiere consultar su prescripción se llama el servicio allUsers, enviando el token obtenido en el paso anterior.
+    \item \textbf{Servicio de consulta a todos los pacientes:} 
+    Para obtener el id del usuario del cual se requiere consultar su prescripción se llama el servicio allUsers, enviando el token obtenido en el paso anterior.
     
             \begin{figure}[ht]
             \centering
             \includegraphics[scale=0.4]{imag/allus.png}
-            \caption{Petición get en Postman }
+            \caption{Petición get en postman para ver todos los usuarios }
             \label{6}
             \end{figure}
             \FloatBarrier
             
-    \item \textbf{Servicio de prescripción}  Para obtener la prescripción de un paciente donde se muestran los ejercicios recomendados se hace el llamado al servicio allEjerciciosByUser enviando los datos como se muestran en el siguiente ejemplo. El resultado muestra los datos de la prescripción para el paciente, el campo que esta marcado como null, no es considerado para ningún efecto. En este caso en particular el token se programó para expirar en 3 horas si no se hace ninguna petición en este lapso.
+    \item \textbf{Servicio de prescripción:}
+    Para obtener la prescripción de un paciente donde se muestran los ejercicios recomendados se hace el llamado al servicio allEjerciciosByUser enviando los datos como se muestran en el siguiente ejemplo. El resultado muestra los datos de la prescripción para el paciente, el campo que esta marcado como null, no es considerado para ningún efecto. En este caso en particular el token se programó para expirar en 3 horas si no se hace ninguna petición en este lapso.
     
             \begin{figure}[ht]
             \centering
             \includegraphics[scale=0.4]{imag/prees.png}
-            \caption{Petición post en Postman }
+            \caption{Petición post en postman para ver prescripción de paciente }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+            
+    \item \textbf{Servicio para cagar resultados del paciente:}
+    Este servicio permite la carga de los resultados obtenidos con el dispositivo smarthphone donde se realizó la fisioterapia respiratoria. Este servicio se implementan con la posibilidad de crear resultados ya sea por paciente o de todos los pacientes, teniendo en cuenta la relación existente entre el id del ejercicio y el id user, como también con la posibilidad de obtener todos los resultados de los pacientes:
+    
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.4]{imag/createresult.png}
+            \caption{Petición post en postman para cargar un resultado de un paciente }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+            
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.4]{imag/allresults.png}
+            \caption{Petición get en postman para ver todos los resultados }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+            
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.4]{imag/resultsbyuser.png}
+            \caption{Petición post en postman para cargar todos los resultados }
             \label{6}
             \end{figure}
             \FloatBarrier
     
-
-
-
+    
 \end{enumerate}
+
+
+
 
 
 \subsection{Servidor Virtual}
@@ -1132,26 +1162,140 @@ Por lo tanto, se puede gestionar como una red virtual privada para que la aplica
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.4]{imag/IPestaticaAWS.png}
-\caption{Creación de instancias AWS }
+\caption{Vinculación IP estática }
 \label{6}
 \end{figure}
 \FloatBarrier
 
-Entonces la url se encuentra funcionando para una carga moderada de trabajo en: %definir cantidad de carga o peticiones
+
+La instancia para el proyecto software de fisioterapia respiratorio que incluye un proyecto de desarrollo web y un API quedó definido:
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.4]{imag/onlineaws.png}
-\caption{Proyecto API en AWS}
+\includegraphics[scale=0.4]{imag/instanciafisio.png}
+\caption{Instancia para el proyecto de software de fisioterapia}
 \label{6}
 \end{figure}
 \FloatBarrier
+
+
+
+
+
 
 
 \subsection{Comunicación online entre aplicación Web y API}
 
+Gracias a la creación de la instancia del proyecto API en AWS se logra el manejo de servicios en la nube, el proyecto API disponible en \url{https://d2yaaz8bde1qj3.cloudfront.net/} a continuación se presentan los servicios desarrollados que se pueden consultar en la herramienta POSTMAN:
 
-\subsection{Peticiones web con nodemon}
+
+
+\begin{enumerate}
+    \item \textbf{Servicio de autenticación online:} Autenticarse en el API, el usuario valido es el usuario con los siguientes datos:
+
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.5]{imag/authuseronline2.png}
+            \caption{Petición http post en postman de autenticación de usuario }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+    Con esta petición se obtiene el token, el cual será necesario para acceder a los otros servicios que requieren autorización
+            
+           
+            
+    \item \textbf{Servicio de consulta a todos los pacientes online:} 
+    
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.5]{imag/allusersonline.png}
+            \caption{Petición get en postman para ver todos los usuarios }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+    \item \textbf{Servicio de prescripción online:}
+    
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.5]{imag/presonline2.png}
+            \caption{Petición post en postman para ver prescripción de paciente }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+    \item \textbf{Servicio para crear un usuario:}
+    Para crear un usuario que se va a registrar en la aplicación es necesario tener en cuenta revisar el servicio allUsers para no repetir la cédula, dado a que es un campo obligatorio que se va validar.
+    
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.5]{imag/presonline.png}
+            \caption{Petición post en postman para la creación de un paciente }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+    
+    
+
+            
+    \item \textbf{Servicio para cargar resultados del paciente:}
+    
+    Para el envió de los resultados del paciente se requiere preferiblemente la generación de un archivo json por medio de una url para ser leida desde la aplicación
+   
+    
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.4]{imag/createresultonline.png}
+            \caption{Petición post en postman para cargar un resultado de un paciente }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+            
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.4]{imag/allresultsonline.png}
+            \caption{Petición get en postman para ver todos los resultados }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+            
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.4]{imag/allresultsbyuseronline.png}
+            \caption{Petición post en postman para cargar todos los resultados }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+            Tener en cuenta que la relación id y id user se esta realizando manualmente:
+            \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.4]{imag/realcionmongoonline.png}
+            \caption{Configuración en mongo entre el id de usuario y ejercicio }
+            \label{6}
+            \end{figure}
+            \FloatBarrier
+            
+            
+    
+    
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\subsection{Peticiones web con nodemon}
 
 
 
@@ -1162,26 +1306,48 @@ Entonces la url se encuentra funcionando para una carga moderada de trabajo en: 
 
 
 
-\section{Prototipo Funcional del Sistema Web }
+\section{Aplicación Web}
 
-\subsection{Servicios Implementados}
+En esta sección se explica las utilidades de React utilizaron para el desarrollo de la interfaz de usuario del software de fisioterapia
+
+\subsection{Funciones de React}
+
+\begin{itemize}
+    \item \textbf{Controler:}
+    \item \textbf{Reducers:}
+    \item \textbf{Routers:}
+    \item \textbf{Models:}
+    
+    
+\end{itemize}
+
+\newpage
 
 
-
-
-\subsection{Librerias de React}
-
-\subsection{Aplicación Web}
+\subsection{Prototipo Funcional del Sistema Web }
 
 En esta sección se presenta el prototipo funcional del sistema donde se especifica en detalle las funcionalidades
 
-\subsubsection{Registro usuarios}
+\subsubsection{Inicio de sesión para usuarios}
+
+El usuario tanto paciente como fisioterapeuta respiratorio cuenta con el ingreso de sesión:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.6]{imag/appiniciosesion.png}
+\caption{Inicio de sesión}
+\label{6}
+\end{figure}
+\FloatBarrier
+
+
+\subsubsection{Lista de usuarios}
 
 El fisioterapeuta tiene fijada una lista de pacientes que se presenta por cédula y por nombre, en esta vista de la interfaz, el fisioterapeuta puede ver la prescripción del paciente seleccionado, eliminar o registrar un paciente ver su prescripción.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.36]{imag/listpacientes.png}
+\includegraphics[scale=0.3]{imag/listpacientes.png}
 \caption{Lista de pacientes}
 \label{6}
 \end{figure}
@@ -1191,39 +1357,56 @@ Para registrar un nuevo paciente se requiere los datos que se muestran a continu
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.4]{imag/registrousaapp.png}
+\includegraphics[scale=0.5]{imag/appregistrousuario.png}
 \caption{Registro de pacientes}
 \label{6}
 \end{figure}
 \FloatBarrier
 
+\subsubsection{Información de pacientes}
+
+Se despliega la información de los pacientes, con la opción de cargar una imagen personalizada previamente disponible, en esta ventana encuentra la opcion de ver las prescripciones asignadas y agregar una nueva:
 
 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/appverdatosusuarios2.png}
+\caption{Datos del paciente}
+\label{6}
+\end{figure}
+\FloatBarrier
 
-\subsubsection{Inicio de sesión para usuarios}
+En la ventana anterior en la opción agregar puede agregar la prescripción que necesita registrar con los datos necesarios
 
 
-\subsubsection{Prescripción a pacientes}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/appregistrarpreescripcion.png}
+\caption{Registrar una prescripción}
+\label{6}
+\end{figure}
+\FloatBarrier
 
 
 En la prescripción del paciente el fisioterapeuta podrá ver para el paciente seleccionado, la capacidad vital calculada por el sistema dados los datos del paciente, también puede ver los indicadores de fisioterapia que han sido asignados al paciente previamente.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.36]{imag/prescriapp.png}
+\includegraphics[scale=0.3]{imag/appprescripcionuser.png}
 \caption{Prescripción asignada a un paciente}
 \label{6}
 \end{figure}
 \FloatBarrier
 
 
+
 \subsubsection{Visualización de resultados}
 
-Se presenta la curva de volumen vs tiempo de una fisioterapia realizada; la gráfica de a continuación muestra los datos de prueba:
+Para cada uno de las prescripciones realizadas el fisioterapeuta respiratorio tiene la posibilidad de ver el comportamiento de los resultados mediante la gráfica presentada con la opción \textit{ver resultados}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.43]{imag/volumetiempoapp.png}
+\includegraphics[scale=0.3]{imag/appresultadosflujotiempo.png}
 \caption{Visualización de flujo respiratorio}
 \label{6}
 \end{figure}
@@ -1232,21 +1415,33 @@ Se presenta la curva de volumen vs tiempo de una fisioterapia realizada; la grá
 
 
 
+ \subsection{Resultados de fisioterapia}
+%Pruebas
 
 
-\subsubsection{Fase de comunicación y pruebas}
 
-Se envía el ID del usuario  (en la colección de usuarios de mongo DB el campo id)y se reciben los datos de inspiración y espiración para graficar, necesito saber el nombre del nombre de la función y la URL donde esta ubicada
+\section{Código}
+
+\begin{itemize}
+    \item \textbf{Aplicación web:} \url{https://github.com/DianaCarolinaMunoz/TesisFisioterapia.git}
+    \item \textbf{Protecto API:} \url{https://github.com/DianaCarolinaMunoz/TesisFisioterapiaAPI.git}
+\end{itemize}
 
 
-%\subsection{Análisis estadístico de datos}
 
-\subsection{Resultados de fisioterapia}
+
+
 
 
 
 %-------------------------------------------------------------------------------------
 \section{Conclusiones y Recomendaciones}
+\begin{itemize}
+    \item El sistema software de fisioterapia respiratoria permitió brindar el primer acercamiento digital para analizar el comportamiento de un paciente en rehabilitación la función pulmonar
+
+%Los fisioterapias respiratorias desempeñan roles de atención primaria para atender las necesidades de los pacientes mediante servicios de tratamiento respiratorio, se deriva un flujo estándar del comportamiento de una fisioterapia respiratoria que se presenta a continuación:
+%\item El software integrado a un inspirometro permitió desarrollar tecnicas
+\end{itemize}
 
 
 \section{Trabajos Futuros}
