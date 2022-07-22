@@ -52,11 +52,11 @@
 %\input{./Cartaanteproyecto.tex}
 %\clearpage\null\newpage
 
-%\input{./cartatutor.tex}
-%\clearpage\null\newpage
+\input{./cartatutor.tex}
+\clearpage\null\newpage
 
-%\input{./cartatesis.tex}
-%\clearpage\null\newpage
+\input{./cartatesis.tex}
+\clearpage\null\newpage
 
 \input{./title.tex}
 %\clearpage\null\newpage
@@ -79,7 +79,7 @@
 
 Uno de los principales objetivos de la fisioterapia respiratoria es conseguir una mejoría de los síntomas en función de la oxigenación pulmonar, actualmente la pandemia de la COVID-19 y sus variantes han puesto en reto a los fisioterapeutas para responder en cada momento las necesidades de salud de cada uno de los individuos \cite{28}. 
 
-Se identificó por lo tanto, la necesidad de atención remota para pacientes con COVID-19 o que se están recuperando de esta enfermedad y que pueda ser guiada con los mismos estándares de asistencia médica requerida.
+Se identificó por lo tanto, la necesidad de atención remota para pacientes con COVID-19 especialmente para aquellos que se están recuperando de esta enfermedad, atención médica que pueda ser guiada con los mismos estándares de una asistencia presencial, y que  mediante una plataforma digital se manejen los servicios identificados en un estudio detenido y detallado de una fisioterapia respiratoria como se realiza en este trabajo de grado.
 
 En los primeros cuatro capítulos se introduce el tema de investigación en el que se basa el trabajo de grado de maestría junto con sus objetivos, alcances, y marco de referencia además de explicar la importancia de llevar a cabo esta investigación; en el quinto capítulo se presenta el proceso de ingeniería de software donde se desarrollan y se priorizan los requisitos del sistema, soportando con definiciones y análisis, así mismo se especifican los pasos para la elicitación de requisitos; en el sexto capítulo se presentan la arquitectura de software y se especifica cada uno de los niveles de diseño que cumplen con los requisitos establecidos; en el séptimo capítulo se explican las tecnologías de implementación que posibilitó la comunicación del sistema de software integrado a un inspirómetro; el octavo capitulo presenta el modelo de aplicación web y todas las características de la interfaz de usuario desarrollada donde se evidencian también los resultados obtenidos después de la comunicación del sistema integrado; en el noveno capitulo se encuentran las fuentes de código que soportan esta implementación y por último se presentan las conclusiones, trabajos futuros y anexos con el fin de dar continuidad a la investigación y lograr la aplicación de la misma. 
 
@@ -89,6 +89,14 @@ En los primeros cuatro capítulos se introduce el tema de investigación en el q
 
 %=====================================================================================
 \section*{Abstract}
+
+One of the main objectives of respiratory physiotherapy is to achieve symptom improvement based on pulmonary oxygenation, currently the pandemic of COVID-19 and its variants have challenged physiotherapists to respond to the health needs of each individual at all times.
+
+Therefore, the need for remote care for patients with COVID-19 was identified, especially for those who are recovering from this disease, medical care that can be guided with the same standards of a face-to-face assistance, and that through a digital platform the services identified in a detailed and detailed study of a respiratory physiotherapy as performed in this degree work are managed.
+
+The first four chapters introduce the research topic on which the master's degree project is based, together with its objectives, scope and frame of reference, as well as explaining the importance of carrying out this research; the fifth chapter presents the software engineering process where the system requirements are developed and prioritised, supported by definitions and analysis, and also specifies the steps for the elicitation of requirements; the sixth chapter presents the software architecture and specifies each of the design levels that meet the established requirements; the seventh chapter explains the implementation technologies that made possible the communication of the integrated software system to an inspirometer; the eighth chapter presents the web application model and all the characteristics of the developed user interface where the results obtained after the communication of the integrated system are also evidenced; in the ninth chapter the code sources that support this implementation are found and finally the conclusions, future works and annexes are presented in order to give continuity to the investigation and achieve the application of the same. 
+
+
 
 
 
@@ -180,11 +188,15 @@ En los primeros cuatro capítulos se introduce el tema de investigación en el q
 %=====================================================================================
 \section{Introducción}
 
-El nuevo coronovirus SARS-CoV-2, que provoca la enfermedad del COVID-19, contin\'ua extendiendose por el planeta,
-% contagios a nivel mundial, numero de casos
-a noviembre del 2020 se registran 62,4 millones de casos en el mundo de los cuales los pa\'ises con la mayor proporci\'on eran Estados Unidos y la  India con un 20.25\% y 16.83\% respectivamente \cite{6}. El virus SARS-CoV-2 es el s\'eptimo coronavirus conocido que infecta a los seres humanos; en las personas generalmente el coronavirus causa s\'intomas leves, como tos o resfriado, pero el nuevo coronavirus ha provocado enfermedades respiratorias m\'as graves y muertes en todo el mundo \cite{7}. Considerando que actualmente no existen tratamientos espec\'ificos para COVID-19, las compa\~{n}\'ias farmac\'euticas estan llevando a cabo estudios cl\'inicos para desarrollar nuevos medicamentos y los grupos de investigaci\'on est\'an buscando, con una variedad de experimentos, los resultados de un tratamiento efectivo \cite{8}.
+%Actualizar por tiempos..
 
-Colombia representa un 2.25\% de los casos en todo el mundo \cite{8}, considerando que hay un aumento de casos de COVID-19 que sumado a la cuarentena obligatoria generan un incremento en la demanda de consultas m\'edicas de atenci\'on primaria presencial, las diferentes instituciones en Colombia han adoptado la modalidad virtual, a trav\'es del  uso de plataformas digitales con servicios de telesalud, las cuales han complementado las destrezas de la presencialidad y con ello han logrado suplir las necesidades en este sector \cite{9}. Sin embargo, el pa\'is no ha alcanzado un desarrollo significativo en estas nuevas tecnolog\'ias debido a que no todas las personas y los grupos de trabajo disponen de las herramientas digitales necesarias para cumplir con las actividades requeridas. 
+El nuevo coronavirus SARS-CoV-2, que provocó la enfermedad del COVID-19, y registró cerca de 62,4 millones de casos en el mundo de los cuales los pa\'ises con la mayor proporci\'on fueron Estados Unidos y la  India con un 20.25\% y 16.83\% respectivamente desde noviembre de 2020 \cite{6}, provocó enfermedades respiratorias graves y muertes en todo el mundo \cite{7} razón por la cual la Organización Mundial de la Salud (OMS) y médicos alrededor del mundo lograron establecer un programa de inmunización que con acuerdos entre compañías consiguieron que para el 2021 hubieran vacunas suficientes para la población adulta en todo el mundo \cite{30}. 
+
+En el año 2020 el gobierno de Colombia decretó un periodo de aislamiento social y confinamiento obligatorio en el territorio nacional periodo que fue extendiéndose a medida que se propagó la enfermedad de COVID-19. La OMS solicitó a los países la adopción de las medidas necesarias para detener la trasmisión y prevenir la propagación del virus, por lo cual se declaró estado de emergencia económica, social y ecológica en todo el territorio nacional.
+
+El sector de la salud en Colombia se enfrentó inicialmente a los retos de la pandemia, a la necesidad de adaptar modelos de telemedicina requerido por el Ministerio de Salud con el fin de facilitar el acceso a los servicios de salud, para ello la implementación de plataformas digitales con estándares básicos que permitan el diagnostico y seguimiento del paciente, que fueron fuertemente demandadas mediante el plan de transformación digital \cite{31}.
+
+El COVID-19 es una enfermedad infecciosa que puede causar importantes disfunciones respiratorias y físicas a corto y largo plazo que requieren la aplicación de técnicas de rehabilitación adaptadas a la necesidad de cada paciente \cite{32}. Actualmente en Colombia, la atencion médica no tiene tratamientos espec\'ificos para COVID-19 dentro de la telemedicina, el pa\'is no ha alcanzado un desarrollo significativo en estas nuevas tecnolog\'ias debido a que no todas las personas y los grupos de trabajo disponen de las herramientas digitales necesarias para cumplir con las actividades requeridas. 
 
 %REVISAR
 La concepci\'on de proyectos en telemedicina es un desaf\'io con un buen futuro en Colombia,  el Ministerio de Salud y Protecci\'on social ha establecido disposiciones para la telesalud y par\'ametros para la pr\'actica de la telemedicina facilitando el acceso y la prestaci\'on de servicios de salud en cualquiera de sus fases (promoci\'on, prevenci\'on, diagn\'ostico, tratamiento y rehabilitaci\'on)\cite{8}.
@@ -195,7 +207,7 @@ La concepci\'on de proyectos en telemedicina es un desaf\'io con un buen futuro 
 Dado que la integraci\'on de sistemas de telemedicina y la penetración de la red inalámbrica han tenido un desarrollo significativo en diferentes pa\'ises donde se ha evidenciado un uso exponencial de estos sistemas durante la crisis del COVID-19 \cite{10}, se presenta una oportunidad de aplicar tecnolog\'ias de comunicaci\'on en el sistema general de salud colombiano, para lo cual es necesario desarrollar productos de apoyo para fortalecer directamente el \'area, pues la asistencia m\'edica virtual durante la pandemia es una forma segura y efectiva de evaluar, guiando el diagn\'ostico y el tratamiento de un paciente, minimizando entonces, el riesgo de transmisi\'on de la enfermedad.
 
 %pasado
-En este proyecto de grado se desarrolló un sistema web que se integró a un inspir\'ometro electr\'onico, este proyecto se planteó en conjunto con un equipo de trabajo conformado por personas de diferentes \'areas de la Pontificia Universidad Javeriana Cali, como la ingener\'ia electr\'onica, las ciencias de la salud, el dise\~{n}o industrial y el \'area de ingenier\'ia de software donde se enfocó el funcionamiento del producto y la comunicaci\'on entre las partes interesadas, es decir, el especialista y el paciente.
+En este proyecto de grado se desarrolló un sistema web que se integró a un inspir\'ometro electr\'onico, especialmente para dar asistencia de fisioterapia respirtaoria para personas que se estan recuperando de COVID-19, este proyecto se planteó en conjunto con un equipo de trabajo conformado por personas de diferentes \'areas de la Pontificia Universidad Javeriana Cali, como la ingener\'ia electr\'onica, las ciencias de la salud, el dise\~{n}o industrial y el \'area de ingenier\'ia de software donde se enfocó el funcionamiento del producto y la comunicaci\'on entre las partes interesadas, es decir, el especialista y el paciente.
 
 %La pandemia del covid 19 ha traido a la humanidad nuevas necesidades de adaptación para 
 
@@ -969,7 +981,7 @@ Dados las especificaciones de los servicios de fisioterapia y los requerimientos
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.7]{imag/L1C4.PNG}
+\includegraphics[scale=0.6]{imag/L1C4.PNG}
 \caption{Arquitectura de primer nivel del sistema de fisioterapia respiratoria}
 \label{5}
 \end{figure}
@@ -981,21 +993,18 @@ Se identifican funcionalidades especificas del sistema y se separan los servicio
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.7]{imag/L2C4.PNG}
+\includegraphics[scale=0.5]{imag/L2C4.PNG}
 \caption{Arquitectura de segundo nivel del sistema de fisioterapia respiratoria}
 \label{5}
 \end{figure}
 \FloatBarrier
 
-
-
 %C3
 \subsubsection{Diagrama de Componentes}
 
-
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.8]{imag/L3C4.PNG}
+\includegraphics[scale=0.6]{imag/L3C4.PNG}
 \caption{Arquitectura de primer tercer del sistema de fisioterapia respiratoria}
 \label{5}
 \end{figure}
@@ -1005,20 +1014,23 @@ Se identifican funcionalidades especificas del sistema y se separan los servicio
 
 %C4
 
+\newpage
+
 \subsubsection{Modelo de bases de datos}
 
-%mejorar el
+Para la representación del modelo de datos del sistema se definen las clases de usuario a su vez asociadas las clases de paciente y fisioterapeuta, la clase de prescripción compuesta por la clase de usuario, puesto que una prescripción existe si un usuario existe, la relación entre estas dos clases es por cada usuario tenemos varias prescripciones, la clase de prescripción se compone también con la existencia de una clase ejercicios donde se encuentran establecidos los atributos que definen ese tipo de ejercicio, por ultimo se encuentra la clase de resultados que depende de la clase ejercicios, pues estos resultados se asignan a el ejercicio que a su vez esta asignado a un usuario.
+
+
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.36]{imag/Modelo DB.png}
+\includegraphics[scale=0.36]{imag/C4-DB.png}
 \caption{Modelo de Base de datos}
 \label{6}
 \end{figure}
 \FloatBarrier
 
 
-\subsection{Usuarios} Los usuarios en el sistema se definen como usuario tipo paciente o usuario tipo fisioterapeuta
-\subsection{Prescripción} La prescripción es establecida por un usuario tipo fisioterapeuta con los datos de un ejercicio de inspiración profunda %validar
+
 
 
 
@@ -1027,33 +1039,28 @@ Se identifican funcionalidades especificas del sistema y se separan los servicio
 
 \section{Tecnologías de implementación}
 
-Se establece como marco de trabajo de desarrollo, React conocido para la creación de aplicaciones de front end. Este sistema se plantea en dos fases, la primera como inicio de desarrollo del sistema software en entorno de trabajo local y la segunda en un entorno de trabajo online donde se trabajara con las herramientas virtuales presentadas en este capitulo.
+Para el desarrollo del sistema web se opta por utilizar React, conocido como una biblioteca de JavaScript para construir interfaces de usuario o creación de aplicaciones de front end. El desarrollo del banckend se realizar con Node.js un, entorno de ejecución para JavaScript multiplataforma que trabaja en tiempo de ejecución, se utiliza específicamente el framework de Node conocido como Express.js, que permite escritura de manejadores de peticiones con diferentes HTTP en diferentes rutas URL. Para el manejo de datos se opta por utilizar MongoDB como complemeneto para desarrollar en lenguajes basados en JavaScript
 
 %REACT
 %C1
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.36]{imag/React1.png}
-\caption{Arquitectura con tecnologías definidas }
+\includegraphics[scale=0.4]{imag/ArquAWS.png}
+\caption{Arquitectura de aplicación web }
 \label{6}
 \end{figure}
 \FloatBarrier
 
+Para el despliegue del sistema web en la nube se opta por utilizar AWS que permite el almacenamiento, mantenimiento de servidores y el acceso a bases de datos establecidas, el diagrama de a continuación muestra el flujo del despliegue de la información, contando con una instancia Lightsail de AWS donde se encuentra el sistema web que nos proporciona el sitio web del mismo.
 
-
-
-
-\subsection{Database MongoDB}
-
-%REACT
-%C1
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.36]{imag/databasemongo.png}
-\caption{Base de datos en mongo }
+\includegraphics[scale=0.45]{imag/Lightsail.png}
+\caption{Arquitectura de despliegue del sistema web }
 \label{6}
 \end{figure}
 \FloatBarrier
+
 
 
 
@@ -1305,18 +1312,23 @@ Gracias a la creación de la instancia del proyecto API en AWS se logra el manej
 
 
 
-
+\newpage
 \section{Aplicación Web}
 
-En esta sección se explica las utilidades de React utilizaron para el desarrollo de la interfaz de usuario del software de fisioterapia
+En esta sección se explica las utilidades de React para el desarrollo de la interfaz de usuario del sistema software de fisioterapia.
+
+La aplicación web es desarrollada bajo los conceptos de Semantic UI, framework para crear diseños de interfaces de manera responsive utilizando HTML y CSS que permite la creacion de componentes React, HTML para la creación de formularios y CSS para el estilo de cada página web \cite{33}.
+
 
 \subsection{Funciones de React}
 
+A continuación se describen las funciones de React y NodeJS que se utilizaron en el desarrollo del sistema web:
+
 \begin{itemize}
-    \item \textbf{Controler:}
-    \item \textbf{Reducers:}
-    \item \textbf{Routers:}
-    \item \textbf{Models:}
+    \item \textbf{Controlers:} Tanto en la aplicación web como para el desarrollo de un API REST con NodeJS se permite la función de componentes controlados, especialmente para el desarrollo del API se desarrollan controladores y rutas que toman las acciones especificadas en la codificación.
+    \item \textbf{Reducers:} Redux conocido como un contendedor predecible del estado de aplicaciones JavaScript \cite{34}. Su uso en React para permitir describir la interfaz de usuario como una función de estado, es decir emite actualizaciones de estado en respuesta a acciones. 
+    \item \textbf{Routers:} Como conjunto de componentes de navegación que se utilizaron en la aplicación web y por lo cual se permitió establecer rutas como: home, inicio de sesión, etc. como también la realización de redirecciones a otras paginas según ciertas condiciones \cite{35}.
+    \item \textbf{Models:} esta función utilizada para el desarrollo del backend de la aplicación web. Se crean modelos y entidades en NodeJS que van a representar a una entidad en la base de datos y mas concretamente a un único registro o documento de la base de datos.
     
     
 \end{itemize}
@@ -1415,8 +1427,146 @@ Para cada uno de las prescripciones realizadas el fisioterapeuta respiratorio ti
 
 
 
- \subsection{Resultados de fisioterapia}
-%Pruebas
+ \subsection{Pruebas del sistema web}
+ 
+\subsubsection{Prueba de validación de envío de datos por paciente }
+Con el objetivo de comprobar el procedimiento de carga de resultados por paciente desarrollado, en esta prueba validamos el flujo de envío de datos hasta lograr la visualización de las gráficas de los resultados en la aplicación web:
+
+Se valida la existencia del usuario tipo paciente en la plataforma:
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TEST1User.png}
+\caption{Validación de usuarios en base de datos}
+\label{6}
+\end{figure}
+\FloatBarrier
+
+En la base de datos, en la colección de ejercicios, validamos que el usuario tipo paciente tenga asignado un ejercicio:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TEST2Ejercicio.png}
+\caption{Validación de ejercicios en base de datos}
+\label{6}
+\end{figure}
+\FloatBarrier
+
+Desde nuestra herramienta postman que nos permite la carga de los resultados de prueba, validamos que el envío de datos sea satisfactorio:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TEST3sendData.png}
+\caption{Validación de envió de datos}
+\label{6}
+\end{figure}
+\FloatBarrier
+
+Validamos que la carga de resultados se actualice en la base de datos:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TEST4Results.png}
+\caption{Validación de carga de resultados }
+\label{6}
+\end{figure}
+\FloatBarrier
+
+Se realiza doble verificación en la consola del servidor en web:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TEST5Console.png}
+\caption{Validación de datos en servidor web}
+\label{6}
+\end{figure}
+\FloatBarrier
+
+Desde la aplicación web, ingresamos a validar estos datos del usuario tipo paciente seleccionado inicialmente:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TEST6UserF.png}
+\caption{Validación de usuarios en aplicación web }
+\label{6}
+\end{figure}
+\FloatBarrier
+
+Se nos presenta la prescripción asignada al paciente con fecha y hora de la data enviada inicialmente:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TEST7Preescrip.png}
+\caption{Validación de datos de prescripción }
+\label{6}
+\end{figure}
+\FloatBarrier
+
+
+
+Finalmente las gráficas flujo y volumen de resultados enviados a nuestro paciente:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TEST8Graficas.png}
+\caption{Validación de visualización de resultados }
+\label{6}
+\end{figure}
+\FloatBarrier
+
+
+\subsubsection{Prueba de validación de conexión envío de datos por paciente con el sistema móvil }
+
+A continuación la prueba realizada con la conexión del sistema móvil encargado del recibimiento de las prescripciones y el envió de resultados al paciente: 
+
+Inicio del sistema móvil para fisioterapia:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TESTseleccionejericiomobile.png}
+\caption{Inicio de fisioterapia desde sistema móvil }
+\label{6}
+\end{figure}
+\FloatBarrier
+
+
+Estructura de envío de resultados desde el sistema móvil:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TESTMobileenviodatos.png}
+\caption{Estructura de envió de datos desde sistema móvil }
+\label{6}
+\end{figure}
+\FloatBarrier
+
+
+Evidencia de los datos enviados desde el sistema móvil:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TESTmovildatosevidenciados.png}
+\caption{Evidencia de resultados desde el sistema móvil }
+\label{6}
+\end{figure}
+\FloatBarrier
+
+Evidencia de los datos registrados en el servidor web:
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{imag/TESTmobileconsoleresults.png}
+\caption{Evidencia de resultados en el servidor }
+\label{6}
+\end{figure}
+\FloatBarrier
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1424,7 +1574,7 @@ Para cada uno de las prescripciones realizadas el fisioterapeuta respiratorio ti
 
 \begin{itemize}
     \item \textbf{Aplicación web:} \url{https://github.com/DianaCarolinaMunoz/TesisFisioterapia.git}
-    \item \textbf{Protecto API:} \url{https://github.com/DianaCarolinaMunoz/TesisFisioterapiaAPI.git}
+    \item \textbf{Proyecto API:} \url{https://github.com/DianaCarolinaMunoz/TesisFisioterapiaAPI.git}
 \end{itemize}
 
 
@@ -1437,14 +1587,23 @@ Para cada uno de las prescripciones realizadas el fisioterapeuta respiratorio ti
 %-------------------------------------------------------------------------------------
 \section{Conclusiones y Recomendaciones}
 \begin{itemize}
-    \item El sistema software de fisioterapia respiratoria permitió brindar el primer acercamiento digital para analizar el comportamiento de un paciente en rehabilitación la función pulmonar
+    \item El sistema software de fisioterapia respiratoria permitió brindar el primer acercamiento digital para analizar el comportamiento de un paciente en rehabilitación la función pulmonar.
+    
+    \item Con el procedimiento de las buenas practicas de diseño de software, se logró el levantamiento y clasificación de los requerimientos que permitieron reconocer la arquitectura para un software de fisioterapia respiratoria.
 
-%Los fisioterapias respiratorias desempeñan roles de atención primaria para atender las necesidades de los pacientes mediante servicios de tratamiento respiratorio, se deriva un flujo estándar del comportamiento de una fisioterapia respiratoria que se presenta a continuación:
-%\item El software integrado a un inspirometro permitió desarrollar tecnicas
+    \item El software web integrado a un inspirómetro permitió desarrollar técnicas de fisioterapia  respiratoria estándar para el envío y visualización de datos de un paciente.
+    
+    \item React como biblioteca de JavaScript de código abierto permite crear interfaces de usuario interactivas de forma sencilla, permitiendo el diseño de vistas adecuadas a los requerimientos.
+    
+    \item Con el desarrollo de este sistema web se contribuye a los modelos de atención de telemedicina y asistencias médicas especializadas.
+    
+    
 \end{itemize}
 
 
 \section{Trabajos Futuros}
+
+El proyecto sistema web de fisioterapia respiratoria desarrollado es un aporte a los proyectos de sistemas de salud especializados que tiene la universidad, estos proyectos continuando en investigación y evolucionando con nuevos requerimientos en el área de la salud, requerimientos que se pueden aplicar a este sistema entregado. Requerimientos que pueden exigir personalizaciones dependiendo del enfoque de estudio y las necesidades. De esta forma, este desarrollo permite a los responsables proyectar mas funcionalidades de un software de telemedicina.
 
 
 
@@ -1544,37 +1703,6 @@ Para cada uno de las prescripciones realizadas el fisioterapeuta respiratorio ti
 \label{6}
 \end{figure}
 \FloatBarrier
-
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.4]{imag/P10.png}
-\caption{ Modelo de realizar consulta en línea}
-\label{6}
-\end{figure}
-\FloatBarrier
-
-
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.36]{imag/P11.png}
-\caption{Modelo de Historial Clínico }
-\label{6}
-\end{figure}
-\FloatBarrier
-
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.36]{imag/P12.png}
-\caption{Modelo de Estadísticas de Uso de la aplicación }
-\label{6}
-\end{figure}
-\FloatBarrier
-
-
-
 
 
 
